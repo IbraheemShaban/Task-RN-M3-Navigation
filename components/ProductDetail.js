@@ -11,8 +11,9 @@ import {
 import cartStore from '../stores/cartStore';
 import productStore from '../stores/productStore';
 
-export function ProductDetails() {
-  const product = productStore.getProductById(1);
+export function ProductDetails({ route }) {
+  const { id } = route.params;
+  const product = productStore.getProductById(id);
   return (
     <SafeAreaView>
       <ScrollView>
